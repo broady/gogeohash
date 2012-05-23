@@ -23,9 +23,9 @@ func Encode(lat, lng float64) string {
 
 		// interleave bits
 		if even {
-			n ^= constrict(lng, &lngs)
+			n ^= constrict(&lngs, lng)
 		} else {
-			n ^= constrict(lat, &lats)
+			n ^= constrict(&lats, lat)
 		}
 
 		if bit == 4 {
@@ -60,7 +60,7 @@ func Decode(geohash string) ([2]float64, [2]float64) {
 	return lats, lngs
 }
 
-func constrict(coord float64, pair *[2]float64) int {
+func constrict(pair *[2]float64, coord float64) int {
 	m := mid(pair)
 	if coord > m {
 		pair[0] = m

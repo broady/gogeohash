@@ -1,4 +1,4 @@
-package gogeohash
+package geohash
 
 import "testing"
 

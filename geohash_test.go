@@ -1,3 +1,5 @@
+// Copyright 2012 Chris Broadfoot (chris@chrisbroadfoot.id.au). All rights reserved.
+// Licensed under Apache 2.
 package geohash
 
 import "testing"

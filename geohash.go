@@ -1,3 +1,6 @@
+// Copyright 2012 Chris Broadfoot (chris@chrisbroadfoot.id.au). All rights reserved.
+// Licensed under Apache 2.
+// An implementation of the geohash algorithm: http://en.wikipedia.org/wiki/Geohash
 package geohash
 
 import (
@@ -20,7 +23,6 @@ func Encode(lat, lng float64) string {
 
 	for len(geohash) < precision {
 		n <<= 1
-
 		// interleave bits
 		if even {
 			n ^= constrict(&lngs, lng)
@@ -56,7 +58,6 @@ func Decode(geohash string) ([2]float64, [2]float64) {
 			even = !even
 		}
 	}
-
 	return lats, lngs
 }
 
